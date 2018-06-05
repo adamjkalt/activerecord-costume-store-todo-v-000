@@ -12,7 +12,14 @@
 
 ActiveRecord::Schema.define(version: 3) do
 
-  create_table "costume_stores", force: :cascade do |t|
+  create_table "costumes", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "size"
+    t.string "image_url"
+  end
+
+  create_table "costumestores", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.integer "costume_inventory"
@@ -22,14 +29,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "closing_time"
   end
 
-  create_table "costumes", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "size"
-    t.string "image_url"
-  end
-
-  create_table "haunted_houses", force: :cascade do |t|
+  create_table "hauntedhouses", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.string "theme"
